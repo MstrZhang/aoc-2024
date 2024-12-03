@@ -25,6 +25,9 @@ def part_two(memory):
     result = 0
     ops = []
 
+    # input splits memory into multiple lines
+    # this causes op index to be on the wrong offset for latter lines
+    # manually edited input to a single line to make this work
     for line in memory:
         products = re.compile(r'mul\((\d*),(\d*)\)')
         for m in products.finditer(line):
