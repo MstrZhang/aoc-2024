@@ -85,6 +85,7 @@ def part_two(map, guard, direction):
     path, _ = evaluate_path(map, guard, direction)
 
     loops = 0
+    # instead of brute forcing every square, the obstacle is only relevant if it is on the path
     for obstacle in path:
         _, loop = evaluate_path(map, guard, direction, obstacle)
         if loop:
